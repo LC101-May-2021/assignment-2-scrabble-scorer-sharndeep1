@@ -54,10 +54,10 @@ function initialPrompt() {
    console.log("scorerFunction result: ", vowelBonusScore);
    scrabbleScore =scoringAlgorithms[2].scorerFunction(scrabbleWord) ;
    console.log("algorithm name: ",scoringAlgorithms[2].name);
-   console.log("scorerFunction result: ", scrabbleScore);
-   */
+   console.log("scorerFunction result: ", scrabbleScore);*/
+   
    newPointStructure = transform(oldPointStructure);
-  console.log(newPointStructure);
+  //console.log(newPointStructure);
   
 
   
@@ -119,8 +119,7 @@ const scoringAlgorithms = [
   }},
   {name: "Scrabble",
   description: "The traditional scoring algorithm.",
-  scorerFunction: function(scrabbleWord){ return
-  scrabbleScorer(scrabbleWord);
+  scorerFunction: function(scrabbleWord){ return scrabbleScorer(scrabbleWord);
    //oldScrabbleScorer(scrabbleWord);
   
   }}
@@ -158,20 +157,23 @@ function transform(word1){
 return newObj;
 }
 
-let newPointStructure;
+let newPointStructure = transform(oldPointStructure);
 
 function scrabbleScorer(word){
+  let letterPoints = 0;
   for (let i = 0; i < word.length; i++) {
    for (const pointValue in newPointStructure) {
-console.log(pointValue);
-     if (newPointStructure[pointValue].includes(word[i])) {
-      letterPoints += newPointStructure[pointValue];
+//console.log(newPointStructure);
+     if (pointValue.includes(word[i])) {
+      letterPoints += Number(newPointStructure[pointValue]);
+      //console.log(pointValue);
 
      }
    }
 }
 trans =`Score for '${scrabbleWord}': ${letterPoints}`;
-console.log(trans);
+//console.log(trans);
+return trans;
 
 
 
