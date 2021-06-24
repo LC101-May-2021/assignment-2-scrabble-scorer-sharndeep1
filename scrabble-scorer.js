@@ -46,7 +46,7 @@ function initialPrompt() {
   
    simpleScore = scoringAlgorithms[userChoice].scorerFunction(scrabbleWord);
    console.log("algorithm name: ",scoringAlgorithms[userChoice].name);
-   console.log("scorerFunction result: ",simpleScore);
+   console.log(simpleScore);
    //vowelBonusScore = simpleVowelConsScore(scrabbleWord) ;
    //console.log(vowelBonusScore);
    /*vowelBonusScore = scoringAlgorithms[1].scorerFunction(scrabbleWord) ;
@@ -130,7 +130,7 @@ function scorerPrompt() {
   console.log("0 - Simple: One point per character");
 console.log("1 - Vowel Bonus: Vowels are worth 3 points");
 console.log("2 - Scrabble: Uses scrabble point system");
-userChoice = input.question("Enter 0, 1, or 2: 0: ");
+userChoice = input.question("Enter 0, 1, or 2:");
 return userChoice;
   
 
