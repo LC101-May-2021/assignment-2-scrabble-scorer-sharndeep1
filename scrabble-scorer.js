@@ -38,15 +38,15 @@ let scrabbleScore;
 function initialPrompt() {
   console.log("Let's play some scrabble! Enter a word: \n");
   scrabbleWord = input.question("enter a word to score: ");
-  let userChoice = scorerPrompt();
+  //let userChoice = scorerPrompt();
   //scrabbleScore = oldScrabbleScorer(scrabbleWord);
   //console.log(scrabbleScore);
 
   //simpleScore = simpleWordScore(scrabbleWord);
   
-   simpleScore = scoringAlgorithms[userChoice].scorerFunction(scrabbleWord);
+   /*simpleScore = scoringAlgorithms[userChoice].scorerFunction(scrabbleWord);
    console.log("algorithm name: ",scoringAlgorithms[userChoice].name);
-   console.log(simpleScore);
+   console.log(simpleScore);*/
    //vowelBonusScore = simpleVowelConsScore(scrabbleWord) ;
    //console.log(vowelBonusScore);
    /*vowelBonusScore = scoringAlgorithms[1].scorerFunction(scrabbleWord) ;
@@ -131,7 +131,25 @@ function scorerPrompt() {
 console.log("1 - Vowel Bonus: Vowels are worth 3 points");
 console.log("2 - Scrabble: Uses scrabble point system");
 userChoice = input.question("Enter 0, 1, or 2:");
-return userChoice;
+//return userChoice;
+//let userChoice = scorerPrompt();
+  //scrabbleScore = oldScrabbleScorer(scrabbleWord);
+  //console.log(scrabbleScore);
+
+  //simpleScore = simpleWordScore(scrabbleWord);
+  
+   simpleScore = scoringAlgorithms[userChoice].scorerFunction(scrabbleWord);
+   console.log("algorithm name: ",scoringAlgorithms[userChoice].name);
+   console.log(simpleScore);
+   //vowelBonusScore = simpleVowelConsScore(scrabbleWord) ;
+   //console.log(vowelBonusScore);
+   /*vowelBonusScore = scoringAlgorithms[1].scorerFunction(scrabbleWord) ;
+   console.log("algorithm name: ",scoringAlgorithms[1].name);
+   console.log("scorerFunction result: ", vowelBonusScore);
+   scrabbleScore =scoringAlgorithms[2].scorerFunction(scrabbleWord) ;
+   console.log("algorithm name: ",scoringAlgorithms[2].name);
+   console.log("scorerFunction result: ", scrabbleScore);*/
+  
   
 
 
@@ -187,6 +205,9 @@ return trans;
  
 function runProgram() {
    initialPrompt();
+   scorerPrompt(scrabbleWord);
+   console.log(newPointStructure);
+
    
    
    
